@@ -1,0 +1,7 @@
+---
+import Invitation from '../../../components/Invitation.astro';
+import { repository } from '../../../data/repository';
+export async function getStaticPaths() { return (await repository.listWeddings()).map(w => ({ params: { slug: w.slug } })); }
+const bundle = await repository.getWedding(Astro.params.slug!);
+---
+<Invitation bundle={bundle!} />

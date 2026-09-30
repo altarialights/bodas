@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import Icon from './Icon.astro';
+import Photo from './Photo.astro';
+import Music from './Music.astro';
+import DemoBar from './DemoBar.astro';
+import type { WeddingBundle } from '../domain/types';
+import { countdown, formatDate, formatTime } from '../domain/logic';
+interface Props { bundle: WeddingBundle }
+const { bundle } = Astro.props;
+const w = bundle.wedding;
+const media = (id: string) => bundle.media.find(m => m.id === id)!;
+const home = `/boda/${w.slug}`;
+const venue = bundle.venues[1] ?? bundle.venues[0]!;
+const count = countdown(w.startsAt);
+---
+<Base title={`${w.names.join(' y ')} · Nos casamos`} wedding={w}>
+  <Header wedding={w}><Music slot="tools" bundle={bundle} /></Header>
+  <main id="contenido" data-invitation data-slug={w.slug}>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-heading"><h1 id="hero-title" class="hero-title"><span class="hero-word-top">{w.headline[0]}<span class="hero-amp" aria-hidden="true">&amp;</span><span class="hero-line" aria-hidden="true"></span></span><span class="hero-word-bottom">{w.headline[1]}</span></h1></div>
+      <div class="hero-photo"><Photo media={media(w.heroId)} priority sizes="100vw" /><span class="photo-caption">EL PRINCIPIO DE TODO LO QUE VIENE.</span></div>
+      <div class="wrap hero-details">
+        <div class="couple-names"><span data-name-first>{w.names[0]}</span><span class="amp">&amp;</span><span data-name-second>{w.names[1]}</span></div>
+        <div class="event-date"><p class="date-display" data-date>{formatDate(w)}</p><p class="venue-display">{venue.name} <span>·</span> {venue.region}</p></div>
+        <div class="hero-bottom"><div class="countdown" aria-label="Tiempo hasta la boda"><div><span data-count="days">{count.days}</span><small>DÍAS</small></div><div><span data-count="hours">{String(count.hours).padStart(2, '0')}</span><small>HORAS</small></div><div><span data-count="minutes">{String(count.minutes).padStart(2, '0')}</span><small>MIN</small></div></div><div class="hero-cta"><a class="button primary" href={`${home}/confirmar`}>Confirmar asistencia <Icon /></a><button class="calendar-button" data-calendar disabled>Añadir al calendario <Icon name="plus" size={16} /></button></div></div>
+        <a class="details-link" href="#historia">Todos los detalles <Icon name="down" size={20} /></a>
+      </div>
+    </section>
+    <div class="wrap personal-greeting" data-personal-greeting role="status" hidden></div>
+    <section class="phase-panel wrap" data-phase-panel hidden aria-live="polite"></section>
+    <section class="story-section section-space wrap" id="historia" data-section="story" hidden={!w.sections.story}>
+      <div class="dedication"><h2 data-dedication>{w.dedication}</h2><p data-welcome>{w.welcome}</p><span class="signature">{w.names.join(' & ')}</span></div>
+      {w.messageMediaId && (() => { const msg = media(w.messageMediaId!); return msg.kind === 'video' ? <video controls preload="none" poster={msg.poster} src={msg.src} aria-label={msg.alt}></video> : <audio controls preload="none" src={msg.src} aria-label={msg.alt}></audio>; })()}
+      <div class="story-grid">{w.story.map((moment, index) => <article class:list={['story-moment', `moment-${index}`]}><div class="story-image"><Photo media={media(moment.mediaId)} sizes="(max-width:700px) 90vw, 30vw" /></div><div class="moment-copy"><span class="story-year">{moment.year}</span><h3>{moment.title}</h3><p>{moment.text}</p></div></article>)}</div>
+    </section>
+    <section class="program-section section-space wrap" id="programa" data-section="program" hidden={!w.sections.program}>
+      <div class="section-heading"><p class="small-label">NUESTRO PROGRAMA</p><h2>EL DÍA<span class="accent">.</span></h2><p>Sin prisa para celebrar.<br />Con todas las ganas de vernos.</p></div>
+      <ol class="program-list">{bundle.program.map((event, i) => <li><span class="program-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div class="program-copy"><time datetime={event.startsAt}>{formatTime(event.startsAt, w)}</time><h3>{event.title}</h3><p>{event.description}</p><span class="program-venue">{bundle.venues.find(v => v.id === event.venueId)?.name}</span></div></li>)}</ol>
+    </section>
+    <div class="full-bleed-detail"><Photo media={media(w.detailId)} sizes="100vw" /></div>
+    <section class="guide-section section-space wrap" id="guia" data-section="guide" hidden={!w.sections.guide}>
+      <h2 class="section-title">CÓMO VENIR<span class="accent">.</span></h2>
+      <div class="dress-row"><div><span class="small-label">DRESS CODE</span><div class="swatches" aria-label="Paleta sugerida: dorado, crema y negro cálido"><i></i><i></i><i></i></div></div><div><h3>{w.dressCode}</h3><p>{w.dressNote}</p></div></div>
+      <div class="venue-row"><Icon name="pin" size={32} /><h3>{venue.name} · {venue.region}</h3>{venue.mapsUrl ? <a class="text-link" href={venue.mapsUrl} target="_blank" rel="noopener noreferrer">Abrir ubicación <Icon name="diagonal" /></a> : <span class="demo-location">Lugar ficticio · ubicación por configurar</span>}</div>
+      <div class="guide-grid"><div><h3>Llegar y dejarse llevar.</h3>{bundle.venues.map(v => <div class="practical-copy"><h4>{v.name}</h4><p>{v.arrival}</p><p>{v.parking}</p></div>)}</div><div class="guide-accordions">
+        <details id="transporte"><summary>Autobuses de ida y vuelta <Icon name="plus" size={18} /></summary><div class="details-content">{bundle.transport.map(t => <div class="transport-row"><strong>{t.time}</strong><div><p>{t.label}</p><small>{t.departure}</small></div></div>)}<p>Elige tus trayectos al confirmar. Horarios de demostración.</p></div></details>
+        <details><summary>Dónde alojarse <Icon name="plus" size={18} /></summary><div class="details-content">{bundle.accommodations.map(a => <><h4>{a.name}</h4><p>{a.description}</p><p class="muted">{a.note}</p>{a.url && <a class="text-link" href={a.url} target="_blank" rel="noopener noreferrer">Consultar alojamiento <Icon name="diagonal" /></a>}</>)}</div></details>
+        <details><summary>Accesibilidad y comodidad <Icon name="plus" size={18} /></summary><p class="details-content">{w.accessibility}</p></details>
+        <details><summary>Si la lluvia se apunta <Icon name="plus" size={18} /></summary><p class="details-content">{w.rainPlan}</p></details>
+      </div></div>
+    </section>
+    <section class="participation-section section-space" id="participar" data-section="participation" hidden={!w.sections.participation}><div class="wrap participation-grid"><div class="participation-intro"><h2>TAMBIÉN<br />ES TU<br /><em>historia.</em></h2><p>Hay canciones que son un recuerdo.<br />Y palabras que merecen quedarse.</p></div><div class="participation-forms">
+      <details class="participation-detail"><summary><span>Una canción para bailar</span><Icon name="plus" /></summary><form data-participation="song" class="stack-form"><p>¿Cuál no puede faltar en nuestra noche?</p><label>Canción<input name="title" required maxlength="120" autocomplete="off" /></label><label>Artista<input name="artist" required maxlength="120" autocomplete="off" /></label><label>¿Qué recuerdo te trae? <span>(opcional)</span><textarea name="memory" rows="3" maxlength="600"></textarea></label><button class="button primary" type="submit" disabled>Proponer canción <Icon /></button><p role="status" class="form-status"></p></form></details>
+      <details class="participation-detail"><summary><span>Una carta para el futuro</span><Icon name="plus" /></summary><form data-participation="letter" class="stack-form"><p>Para abrir en nuestro primer aniversario. Escríbenos algo que quieras que recordemos.</p><label>Tu nombre<input name="author" required maxlength="80" autocomplete="name" /></label><label>Tu carta<textarea name="text" required minlength="10" maxlength="2000" rows="5"></textarea></label><p class="form-note">La carta queda en memoria durante esta página. No se envía, no se publica y se pierde al recargar.</p><button class="button primary" type="submit" disabled>Sellar mi carta <Icon /></button><p role="status" class="form-status"></p></form></details>
+      <p class="demo-note">Participación de demostración. Nada se envía a una organización real.</p>
+    </div></div></section>
+    <section class="gifts-section section-space wrap" id="regalos" data-section="gifts" hidden={!w.sections.gifts}><div><h2>Que estés.</h2></div><div><p class="lead-copy">{w.giftMessage}</p>{bundle.gifts.map(gift => <details><summary>{gift.title}<Icon name="plus" size={18} /></summary><div class="details-content"><p>{gift.description}</p>{gift.url && <a class="text-link" href={gift.url} target="_blank" rel="noopener noreferrer">Ver {gift.kind === 'list' ? 'lista' : 'aportación'} <Icon name="diagonal" /></a>}</div></details>)}</div></section>
+    <section class="faq-section section-space wrap" id="preguntas" data-section="faq" hidden={!w.sections.faq}><div><h2 class="section-title">POR SI TE<br />PREGUNTAS<span class="accent">.</span></h2><p>Los pequeños detalles, resueltos.</p></div><div>{bundle.faqs.map(faq => <details><summary>{faq.question}<Icon name="plus" size={18} /></summary><p class="details-content">{faq.answer}</p></details>)}<div class="contact-copy"><h3>Estamos cerca.</h3><p>{w.contact}</p>{w.contactUrl && <a class="text-link" href={w.contactUrl}>Contactar con organización <Icon /></a>}</div></div></section>
+    <section class="closing-section"><Photo media={media(w.venueImageId)} /><div class="closing-content"><h2>Nos vemos<br /><em>en el sí.</em></h2><a class="button light" href={`${home}/confirmar`}>Confirmar asistencia <Icon /></a><p>Antes del {new Intl.DateTimeFormat(w.locale, { day: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(w.rsvpDeadline))}</p></div></section>
+  </main>
+  <Footer wedding={w} />
+  <DemoBar wedding={w} />
+  <dialog class="opening-dialog" data-opening aria-label="Tu invitación"><div class="opening-leaf left"></div><div class="opening-leaf right"></div><div class="opening-content"><span class="opening-monogram">{w.visual.monogram}</span><p>Hay días que lo cambian todo.</p><div><button class="text-button" data-skip-opening>Saltar apertura</button><a href="#programa" data-opening-details>Ir a los detalles</a></div></div></dialog>
+  <script>import '../scripts/invitation';</script>
+</Base>

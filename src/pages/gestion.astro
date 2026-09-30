@@ -1,0 +1,6 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Base title="Organización · Altaria demo"><Header /><main id="contenido" class="wrap management-page"><div class="management-top"><div><h1>CADA DETALLE<br /><em>en su sitio.</em></h1><p>El espacio de organización de tus celebraciones.</p></div><div class="wedding-picker"><label for="manage-wedding">Boda que estás organizando</label><select id="manage-wedding" disabled><option>Cargando bodas…</option></select></div></div><div class="demo-disclosure"><strong>Panel de demostración · sin autenticación real.</strong> Solo contiene datos ficticios. Los cambios viven en memoria y se reflejan en la vista previa de esta página. Al recargar se restablecen.</div><div data-management><p class="loading-state" role="status">Preparando la organización…</p></div></main><Footer /><script>import '../scripts/management';</script></Base>

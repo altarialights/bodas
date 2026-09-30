@@ -1,0 +1,6 @@
+---
+import type { MediaResource } from '../domain/types';
+interface Props { media: MediaResource; class?: string; priority?: boolean; sizes?: string }
+const { media, class: className, priority = false, sizes = '(max-width: 700px) 100vw, 90vw' } = Astro.props;
+---
+<img class={className} src={`${media.src}-960.webp`} srcset={`${media.src}-480.webp 480w, ${media.src}-960.webp 960w, ${media.src}-1536.webp 1536w`} sizes={sizes} alt={media.alt} width={media.width ?? 1536} height={media.height ?? 1024} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />

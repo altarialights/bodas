@@ -1,0 +1,20 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import Photo from '../../../components/Photo.astro';
+import Icon from '../../../components/Icon.astro';
+import { repository } from '../../../data/repository';
+export async function getStaticPaths() { return (await repository.listWeddings()).map(w => ({ params: { slug: w.slug } })); }
+const bundle = (await repository.getWedding(Astro.params.slug!))!;
+const w = bundle.wedding;
+const photos = [bundle.media.find(m => m.id.endsWith('-dance')) ?? bundle.media.find(m => m.id === w.heroId)!, ...[w.detailId, w.venueImageId].map(id => bundle.media.find(m => m.id === id)!)];
+const anniversary = new Date(w.startsAt); anniversary.setUTCFullYear(anniversary.getUTCFullYear() + 1);
+---
+<Base title={`Lo que se queda · ${w.names.join(' y ')}`} wedding={w}><Header wedding={w} /><main id="contenido" class="wrap" data-memories data-slug={w.slug}>
+  <a class="return-link" href={`/boda/${w.slug}`}><Icon class="return-icon" />Volver a la invitación</a>
+  <div class="memories-heading"><h1>LO QUE<br /><em>se queda.</em></h1><div><p>{w.thankYou}</p><p class="demo-note">Vista de recuerdos de demostración. Las fotos y los mensajes de ejemplo son ficticios.</p></div></div>
+  <div class="album-grid">{photos.map((photo, i) => <figure><Photo media={photo} priority={i === 0} sizes="(max-width:760px) 45vw, 30vw" /><figcaption>{['Las miradas que lo dicen todo.', 'El camino, siempre juntos.', 'Un lugar para celebrar.'][i]}</figcaption></figure>)}</div>
+  <section class="upload-section" id="compartir"><div><h2>Tu manera de recordarlo.</h2><p>Comparte esa foto que solo tú hiciste.</p><p class="demo-note">Selecciona hasta 8 fotos JPG, PNG o WebP, de hasta 10 MB cada una. Solo se previsualizan en este dispositivo. La subida real estará disponible al conectar almacenamiento.</p></div><div><label class="file-picker" for="memory-photos"><span>Elegir mis fotografías</span><input class="sr-only" id="memory-photos" type="file" accept="image/jpeg,image/png,image/webp" multiple disabled /></label><p data-upload-status class="form-status" role="status"></p></div><div data-upload-previews class="upload-previews"></div></section>
+  <section class="guestbook-section section-space"><div><h2>Palabras que abrazan.</h2><div data-guestbook-list><p class="loading-state" role="status">Abriendo el libro de recuerdos…</p></div><div class="anniversary-box"><h3>Una carta. Un año después.</h3><p>Las cartas del aniversario permanecen selladas hasta el {new Intl.DateTimeFormat(w.locale, { dateStyle: 'long', timeZone: w.timezone }).format(anniversary)}.</p><p class="demo-note" data-anniversary-state>No hay cartas guardadas en esta página de demostración.</p><a class="text-link" href={`/boda/${w.slug}#participar`}>Escribir una carta <Icon /></a></div></div><div><form data-guestbook-form class="stack-form"><label>Tu nombre<input name="author" required maxlength="80" autocomplete="name" /></label><label>Tu recuerdo<textarea name="text" rows="6" required minlength="10" maxlength="2000" placeholder="Me quedo con…"></textarea></label><p class="form-note">Tu mensaje aparecerá solo en esta página, durante esta sesión. No se enviará ni guardará en un servidor.</p><button class="button primary" type="submit" disabled>Dejar mi recuerdo <Icon /></button><p class="form-status" role="status"></p></form></div></section>
+</main><Footer wedding={w} /><script>import '../../../scripts/memories';</script></Base>

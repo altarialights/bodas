@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Photo from '../components/Photo.astro';
+import Icon from '../components/Icon.astro';
+import { repository } from '../data/repository';
+import { formatDate } from '../domain/logic';
+const weddings = await repository.listWeddings();
+const bundles = await Promise.all(weddings.map(w => repository.getWedding(w.slug)));
+---
+<Base title="Altaria · Un día, todos los recuerdos"><Header /><main id="contenido" class="demo-page wrap"><div class="demo-intro"><h1>UN DÍA.<br /><em>Para siempre.</em></h1><div><p>Invitaciones que empiezan en tus manos<br />y se quedan en la memoria.</p><p class="muted">Explora dos historias, una misma experiencia.<br />Todas las parejas, imágenes y lugares son ficticios.</p></div></div><div class="demo-weddings">{bundles.map(bundle => bundle && <article><a class="demo-photo" href={`/boda/${bundle.wedding.slug}`} aria-label={`Ver invitación de ${bundle.wedding.names.join(' y ')}`}><Photo media={bundle.media.find(m => m.id === bundle.wedding.heroId)!} priority /></a><div class="demo-card-meta"><h2>{bundle.wedding.names.join(' & ')}</h2><p>{formatDate(bundle.wedding)} · {bundle.venues[1]?.region}</p><a class="text-link" href={`/boda/${bundle.wedding.slug}`}>Descubrir la invitación <Icon /></a></div><div class="demo-route-links"><a href={`/boda/${bundle.wedding.slug}/confirmar`}>Probar confirmación</a><a href={`/boda/${bundle.wedding.slug}/recuerdos`}>Ver recuerdos</a></div></article>)}</div><aside class="demo-management"><div><h2>Detrás de un día inolvidable.</h2><p>Invitados, respuestas y detalles. Un espacio para organizarlo todo.</p></div><a class="button outline" href="/gestion">Explorar el panel demo <Icon /></a></aside></main><Footer /></Base>

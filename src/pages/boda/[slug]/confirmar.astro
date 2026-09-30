@@ -1,0 +1,12 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import Photo from '../../../components/Photo.astro';
+import Icon from '../../../components/Icon.astro';
+import { repository } from '../../../data/repository';
+export async function getStaticPaths() { return (await repository.listWeddings()).map(w => ({ params: { slug: w.slug } })); }
+const bundle = (await repository.getWedding(Astro.params.slug!))!;
+const w = bundle.wedding;
+---
+<Base title={`Confirma tu asistencia · ${w.names.join(' y ')}`} wedding={w}><Header wedding={w} /><main id="contenido" class="wrap form-page"><a class="return-link" href={`/boda/${w.slug}`}><Icon class="return-icon" />Volver a la invitación</a><div class="form-layout"><aside class="form-aside"><h1>GUARDAMOS<br />UN SITIO<br /><em>para ti.</em></h1><p>Lo que hará especial este día es compartirlo contigo. Cuéntanos si nos acompañas.</p><p>Confirma antes del {new Intl.DateTimeFormat(w.locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(w.rsvpDeadline))}.</p><Photo class="aside-photo" media={bundle.media.find(m => m.id === w.detailId)!} sizes="350px" /></aside><div><div class="demo-disclosure"><strong>Esta es una invitación de demostración.</strong> Las respuestas solo se guardan en memoria en esta página. No se envían a ninguna organización y se perderán al recargar o salir.</div><div data-rsvp data-slug={w.slug}><p class="loading-state" role="status">Preparando tu invitación…</p></div></div></div></main><Footer wedding={w} /><script>import '../../../scripts/rsvp';</script></Base>

@@ -1,0 +1,57 @@
+{
+  "conditions": "Local production preview; Chromium headless; no throttling; reduced motion; a single cold page per viewport; not a field performance or Lighthouse score.",
+  "measurements": [
+    {
+      "viewport": 390,
+      "lcp": 84,
+      "cls": 0.0042936562203228865,
+      "audioRequested": false,
+      "jsBytes": 9727,
+      "imageBytes": 116498,
+      "fontBytes": 59584,
+      "resourceCount": 10
+    },
+    {
+      "viewport": 1440,
+      "lcp": 88,
+      "cls": 0.015305150462962963,
+      "audioRequested": false,
+      "jsBytes": 9727,
+      "imageBytes": 443224,
+      "fontBytes": 59584,
+      "resourceCount": 12
+    }
+  ],
+  "bundles": [
+    {
+      "file": "confirmar.astro_astro_type_script_index_0_lang.CAEzkrIi.js",
+      "bytes": 8392,
+      "gzipBytes": 3529
+    },
+    {
+      "file": "dom.BFnes7UF.js",
+      "bytes": 15395,
+      "gzipBytes": 6698
+    },
+    {
+      "file": "gestion.astro_astro_type_script_index_0_lang.Dq9FsnkG.js",
+      "bytes": 10916,
+      "gzipBytes": 4130
+    },
+    {
+      "file": "Header.6pZy2jyb.css",
+      "bytes": 45747,
+      "gzipBytes": 10416
+    },
+    {
+      "file": "Invitation.astro_astro_type_script_index_0_lang.r1jVL8UI.js",
+      "bytes": 6923,
+      "gzipBytes": 3029
+    },
+    {
+      "file": "recuerdos.astro_astro_type_script_index_0_lang.D-A0aPX0.js",
+      "bytes": 3895,
+      "gzipBytes": 1815
+    }
+  ]
+}

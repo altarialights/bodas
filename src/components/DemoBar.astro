@@ -1,0 +1,6 @@
+---
+import type { Wedding } from '../domain/types';
+interface Props { wedding: Wedding }
+const { wedding } = Astro.props;
+---
+<div class="demo-bar" data-demo-controls><div class="wrap demo-bar-inner"><a href="/demo">DEMO <span>· Explora la experiencia</span></a><label for="phase-select">Ver fase <select id="phase-select" data-phase-select aria-label="Fase de demostración" disabled><option value="auto">Automática</option><option value="before">Antes de la boda</option><option value="during">Hoy es la boda</option><option value="after">Después de la boda</option></select></label><button type="button" class="text-button" data-personalize data-token={wedding.demoInvitationToken} disabled>Mi invitación</button></div></div>

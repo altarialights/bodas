@@ -1,0 +1,9 @@
+---
+import type { Wedding } from '../domain/types';
+interface Props { wedding?: Wedding }
+const { wedding } = Astro.props;
+---
+<footer class="footer wrap">
+  <div class="footer-signature"><span class="monogram">{wedding?.visual.monogram ?? 'A'}</span><span>LO BONITO ES COMPARTIRLO.</span></div>
+  <div class="footer-meta"><p>Una experiencia de <a href="/demo">ALTARIA</a></p><p>Demostración · Parejas, lugares y datos ficticios.</p><a href="/gestion">Panel de organización</a></div>
+</footer>

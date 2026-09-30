@@ -1,0 +1,287 @@
+[
+  {
+    "name": "desktop",
+    "route": "/boda/elena-y-marcos",
+    "width": 1440,
+    "metrics": {
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "images": [
+        {
+          "src": "http://127.0.0.1:4321/images/elena-marcos-1536.webp",
+          "width": 1439
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/elena-marcos-1536.webp",
+          "width": 432
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/manos-1536.webp",
+          "width": 432
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/mesa-1536.webp",
+          "width": 432
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/manos-1536.webp",
+          "width": 1439
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/mesa-1536.webp",
+          "width": 1296
+        }
+      ],
+      "headings": [
+        {
+          "text": "NOS&CASAMOS",
+          "width": 1267
+        },
+        {
+          "text": "Lo mejor de nuestra historia es la gente que forma parte de ella.",
+          "width": 780
+        },
+        {
+          "text": "EL DÍA.",
+          "width": 505
+        },
+        {
+          "text": "CÓMO VENIR.",
+          "width": 1267
+        },
+        {
+          "text": "TAMBIÉNES TUhistoria.",
+          "width": 584
+        },
+        {
+          "text": "Que estés.",
+          "width": 543
+        },
+        {
+          "text": "POR SI TEPREGUNTAS.",
+          "width": 544
+        },
+        {
+          "text": "Nos vemosen el sí.",
+          "width": 525
+        }
+      ]
+    }
+  },
+  {
+    "name": "mobile",
+    "route": "/boda/elena-y-marcos",
+    "width": 390,
+    "metrics": {
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images": [
+        {
+          "src": "http://127.0.0.1:4321/images/elena-marcos-480.webp",
+          "width": 389
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/elena-marcos-480.webp",
+          "width": 351
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/manos-480.webp",
+          "width": 351
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/mesa-480.webp",
+          "width": 351
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/manos-480.webp",
+          "width": 389
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/mesa-480.webp",
+          "width": 389
+        }
+      ],
+      "headings": [
+        {
+          "text": "NOS&CASAMOS",
+          "width": 342
+        },
+        {
+          "text": "Lo mejor de nuestra historia es la gente que forma parte de ella.",
+          "width": 342
+        },
+        {
+          "text": "EL DÍA.",
+          "width": 342
+        },
+        {
+          "text": "CÓMO VENIR.",
+          "width": 342
+        },
+        {
+          "text": "TAMBIÉNES TUhistoria.",
+          "width": 342
+        },
+        {
+          "text": "Que estés.",
+          "width": 342
+        },
+        {
+          "text": "POR SI TEPREGUNTAS.",
+          "width": 342
+        },
+        {
+          "text": "Nos vemosen el sí.",
+          "width": 319
+        }
+      ]
+    }
+  },
+  {
+    "name": "second-desktop",
+    "route": "/boda/ines-y-gabriel",
+    "width": 1440,
+    "metrics": {
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "images": [
+        {
+          "src": "http://127.0.0.1:4321/images/ines-gabriel-1536.webp",
+          "width": 1439
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/ines-gabriel-1536.webp",
+          "width": 432
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/mesa-1536.webp",
+          "width": 432
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/manos-mar-1536.webp",
+          "width": 432
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/manos-mar-1536.webp",
+          "width": 1439
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/mesa-1536.webp",
+          "width": 1296
+        }
+      ],
+      "headings": [
+        {
+          "text": "NOS&CASAMOS",
+          "width": 1267
+        },
+        {
+          "text": "De todos los lugares del mundo, nos quedamos contigo.",
+          "width": 780
+        },
+        {
+          "text": "EL DÍA.",
+          "width": 505
+        },
+        {
+          "text": "CÓMO VENIR.",
+          "width": 1267
+        },
+        {
+          "text": "TAMBIÉNES TUhistoria.",
+          "width": 584
+        },
+        {
+          "text": "Que estés.",
+          "width": 0
+        },
+        {
+          "text": "POR SI TEPREGUNTAS.",
+          "width": 544
+        },
+        {
+          "text": "Nos vemosen el sí.",
+          "width": 525
+        }
+      ]
+    }
+  },
+  {
+    "name": "rsvp-mobile",
+    "route": "/boda/elena-y-marcos/confirmar",
+    "width": 390,
+    "metrics": {
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images": [
+        {
+          "src": "http://127.0.0.1:4321/images/manos-480.webp",
+          "width": 349
+        }
+      ],
+      "headings": [
+        {
+          "text": "GUARDAMOSUN SITIOpara ti.",
+          "width": 342
+        },
+        {
+          "text": "¿Nos acompañas?",
+          "width": 342
+        }
+      ]
+    }
+  },
+  {
+    "name": "management-desktop",
+    "route": "/gestion",
+    "width": 1440,
+    "metrics": {
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "images": [],
+      "headings": [
+        {
+          "text": "CADA DETALLEen su sitio.",
+          "width": 583
+        }
+      ]
+    }
+  },
+  {
+    "name": "memories-mobile",
+    "route": "/boda/elena-y-marcos/recuerdos",
+    "width": 390,
+    "metrics": {
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images": [
+        {
+          "src": "http://127.0.0.1:4321/images/baile-480.webp",
+          "width": 175
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/manos-480.webp",
+          "width": 175
+        },
+        {
+          "src": "http://127.0.0.1:4321/images/mesa-480.webp",
+          "width": 175
+        }
+      ],
+      "headings": [
+        {
+          "text": "LO QUEse queda.",
+          "width": 342
+        },
+        {
+          "text": "Tu manera de recordarlo.",
+          "width": 292
+        },
+        {
+          "text": "Palabras que abrazan.",
+          "width": 342
+        }
+      ]
+    }
+  }
+]

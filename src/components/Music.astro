@@ -1,0 +1,34 @@
+---
+import type { WeddingBundle } from '../domain/types';
+import Icon from './Icon.astro';
+interface Props { bundle: WeddingBundle }
+const { bundle } = Astro.props;
+const music = bundle.media.find(m => m.id === bundle.wedding.musicId);
+---
+<div class="music-control">
+  <button type="button" class="music-button" data-music-toggle aria-pressed="false" aria-describedby="music-status"><Icon name="music" size={17} /><span>Activar música</span></button>
+  <span id="music-status" class="sr-only" role="status"></span>
+  {music ? <audio data-background-music preload="none" loop src={music.src}></audio> : <span class="music-unavailable" hidden>Música pendiente de configurar.</span>}
+</div>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-music-toggle]');
+  const audio = document.querySelector<HTMLAudioElement>('[data-background-music]');
+  const status = document.querySelector<HTMLElement>('#music-status');
+  const label = button?.querySelector('span');
+  let resume = false;
+  const update = () => { const playing = audio ? !audio.paused : false; button?.setAttribute('aria-pressed', String(playing)); if (label) label.textContent = playing ? 'Pausar música' : 'Activar música'; };
+  try { if (localStorage.getItem('altaria:music') === 'on' && label) label.textContent = 'Reanudar música'; } catch { /* Storage is optional. */ }
+  button?.addEventListener('click', async () => {
+    if (!audio) { if (status) status.textContent = 'La música todavía no está configurada.'; document.querySelector<HTMLElement>('.music-unavailable')?.removeAttribute('hidden'); return; }
+    if (audio.paused) {
+      try { audio.volume = 0.3; await audio.play(); if (status) status.textContent = 'Música activada.'; try { localStorage.setItem('altaria:music', 'on'); } catch {} }
+      catch { if (status) status.textContent = 'No se ha podido reproducir la música. Vuelve a pulsar para intentarlo.'; if (label) label.textContent = 'Reintentar música'; return; }
+    } else { audio.pause(); try { localStorage.setItem('altaria:music', 'off'); } catch {} }
+    update();
+  });
+  audio?.addEventListener('error', () => { if (status) status.textContent = 'El audio no está disponible. Puedes volver a intentarlo.'; if (label) label.textContent = 'Reintentar música'; });
+  document.addEventListener('play', event => { if (event.target instanceof HTMLMediaElement && event.target !== audio && audio && !audio.paused) { resume = true; audio.pause(); update(); } }, true);
+  document.addEventListener('ended', async event => { if (event.target !== audio && resume && audio) { resume = false; try { await audio.play(); } catch {} update(); } }, true);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { audio?.pause(); update(); } });
+  window.addEventListener('pagehide', () => audio?.pause(), { once: true });
+</script>

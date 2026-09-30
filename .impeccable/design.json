@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T12:49:25Z",
+  "title": "Design System: Invitaciones Altaria",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "tonalRamp": [
+          "oklch(15% 0.0054 95.10)",
+          "oklch(25% 0.0054 95.10)",
+          "oklch(35% 0.0054 95.10)",
+          "oklch(47% 0.0054 95.10)",
+          "oklch(59% 0.0054 95.10)",
+          "oklch(71% 0.0054 95.10)",
+          "oklch(83% 0.0054 95.10)",
+          "oklch(95% 0.0054 95.10)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta cálida",
+        "tonalRamp": [
+          "oklch(15% 0.0078 84.59)",
+          "oklch(25% 0.0078 84.59)",
+          "oklch(35% 0.0078 84.59)",
+          "oklch(47% 0.0078 84.59)",
+          "oklch(59% 0.0078 84.59)",
+          "oklch(71% 0.0078 84.59)",
+          "oklch(83% 0.0078 84.59)",
+          "oklch(95% 0.0078 84.59)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Oro mate",
+        "tonalRamp": [
+          "oklch(15% 0.0929 79.22)",
+          "oklch(25% 0.0929 79.22)",
+          "oklch(35% 0.0929 79.22)",
+          "oklch(47% 0.0929 79.22)",
+          "oklch(59% 0.0929 79.22)",
+          "oklch(71% 0.0929 79.22)",
+          "oklch(83% 0.0929 79.22)",
+          "oklch(95% 0.0929 79.22)"
+        ]
+      },
+      "accent-dark": {
+        "role": "primary",
+        "displayName": "Oro profundo",
+        "tonalRamp": [
+          "oklch(15% 0.0796 76.95)",
+          "oklch(25% 0.0796 76.95)",
+          "oklch(35% 0.0796 76.95)",
+          "oklch(47% 0.0796 76.95)",
+          "oklch(59% 0.0796 76.95)",
+          "oklch(71% 0.0796 76.95)",
+          "oklch(83% 0.0796 76.95)",
+          "oklch(95% 0.0796 76.95)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texto secundario",
+        "tonalRamp": [
+          "oklch(15% 0.0147 86.87)",
+          "oklch(25% 0.0147 86.87)",
+          "oklch(35% 0.0147 86.87)",
+          "oklch(47% 0.0147 86.87)",
+          "oklch(59% 0.0147 86.87)",
+          "oklch(71% 0.0147 86.87)",
+          "oklch(83% 0.0147 86.87)",
+          "oklch(95% 0.0147 86.87)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Regla cálida",
+        "tonalRamp": [
+          "oklch(15% 0.0349 80.28)",
+          "oklch(25% 0.0349 80.28)",
+          "oklch(35% 0.0349 80.28)",
+          "oklch(47% 0.0349 80.28)",
+          "oklch(59% 0.0349 80.28)",
+          "oklch(71% 0.0349 80.28)",
+          "oklch(83% 0.0349 80.28)",
+          "oklch(95% 0.0349 80.28)"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Papel tonal",
+        "tonalRamp": [
+          "oklch(15% 0.0115 84.58)",
+          "oklch(25% 0.0115 84.58)",
+          "oklch(35% 0.0115 84.58)",
+          "oklch(47% 0.0115 84.58)",
+          "oklch(59% 0.0115 84.58)",
+          "oklch(71% 0.0115 84.58)",
+          "oklch(83% 0.0115 84.58)",
+          "oklch(95% 0.0115 84.58)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Blanco",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(25% 0.0000 89.88)",
+          "oklch(35% 0.0000 89.88)",
+          "oklch(47% 0.0000 89.88)",
+          "oklch(59% 0.0000 89.88)",
+          "oklch(71% 0.0000 89.88)",
+          "oklch(83% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "olive": {
+        "role": "primary",
+        "displayName": "Oliva",
+        "tonalRamp": [
+          "oklch(15% 0.0353 123.08)",
+          "oklch(25% 0.0353 123.08)",
+          "oklch(35% 0.0353 123.08)",
+          "oklch(47% 0.0353 123.08)",
+          "oklch(59% 0.0353 123.08)",
+          "oklch(71% 0.0353 123.08)",
+          "oklch(83% 0.0353 123.08)",
+          "oklch(95% 0.0353 123.08)"
+        ]
+      },
+      "olive-dark": {
+        "role": "primary",
+        "displayName": "Oliva profundo",
+        "tonalRamp": [
+          "oklch(15% 0.0416 127.30)",
+          "oklch(25% 0.0416 127.30)",
+          "oklch(35% 0.0416 127.30)",
+          "oklch(47% 0.0416 127.30)",
+          "oklch(59% 0.0416 127.30)",
+          "oklch(71% 0.0416 127.30)",
+          "oklch(83% 0.0416 127.30)",
+          "oklch(95% 0.0416 127.30)"
+        ]
+      },
+      "olive-paper": {
+        "role": "neutral",
+        "displayName": "Papel oliva",
+        "tonalRamp": [
+          "oklch(15% 0.0053 106.50)",
+          "oklch(25% 0.0053 106.50)",
+          "oklch(35% 0.0053 106.50)",
+          "oklch(47% 0.0053 106.50)",
+          "oklch(59% 0.0053 106.50)",
+          "oklch(71% 0.0053 106.50)",
+          "oklch(83% 0.0053 106.50)",
+          "oklch(95% 0.0053 106.50)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Borde de campo",
+        "tonalRamp": [
+          "oklch(15% 0.0186 81.32)",
+          "oklch(25% 0.0186 81.32)",
+          "oklch(35% 0.0186 81.32)",
+          "oklch(47% 0.0186 81.32)",
+          "oklch(59% 0.0186 81.32)",
+          "oklch(71% 0.0186 81.32)",
+          "oklch(83% 0.0186 81.32)",
+          "oklch(95% 0.0186 81.32)"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "tonalRamp": [
+          "oklch(15% 0.0188 79.27)",
+          "oklch(25% 0.0188 79.27)",
+          "oklch(35% 0.0188 79.27)",
+          "oklch(47% 0.0188 79.27)",
+          "oklch(59% 0.0188 79.27)",
+          "oklch(71% 0.0188 79.27)",
+          "oklch(83% 0.0188 79.27)",
+          "oklch(95% 0.0188 79.27)"
+        ]
+      },
+      "error": {
+        "role": "secondary",
+        "displayName": "Error",
+        "tonalRamp": [
+          "oklch(15% 0.1362 26.89)",
+          "oklch(25% 0.1362 26.89)",
+          "oklch(35% 0.1362 26.89)",
+          "oklch(47% 0.1362 26.89)",
+          "oklch(59% 0.1362 26.89)",
+          "oklch(71% 0.1362 26.89)",
+          "oklch(83% 0.1362 26.89)",
+          "oklch(95% 0.1362 26.89)"
+        ]
+      },
+      "error-surface": {
+        "role": "secondary",
+        "displayName": "Fondo de error",
+        "tonalRamp": [
+          "oklch(15% 0.0141 39.42)",
+          "oklch(25% 0.0141 39.42)",
+          "oklch(35% 0.0141 39.42)",
+          "oklch(47% 0.0141 39.42)",
+          "oklch(59% 0.0141 39.42)",
+          "oklch(71% 0.0141 39.42)",
+          "oklch(83% 0.0141 39.42)",
+          "oklch(95% 0.0141 39.42)"
+        ]
+      },
+      "confirmed-ink": {
+        "role": "secondary",
+        "displayName": "Texto confirmado",
+        "tonalRamp": [
+          "oklch(15% 0.0461 151.10)",
+          "oklch(25% 0.0461 151.10)",
+          "oklch(35% 0.0461 151.10)",
+          "oklch(47% 0.0461 151.10)",
+          "oklch(59% 0.0461 151.10)",
+          "oklch(71% 0.0461 151.10)",
+          "oklch(83% 0.0461 151.10)",
+          "oklch(95% 0.0461 151.10)"
+        ]
+      },
+      "confirmed-surface": {
+        "role": "secondary",
+        "displayName": "Fondo confirmado",
+        "tonalRamp": [
+          "oklch(15% 0.0143 128.63)",
+          "oklch(25% 0.0143 128.63)",
+          "oklch(35% 0.0143 128.63)",
+          "oklch(47% 0.0143 128.63)",
+          "oklch(59% 0.0143 128.63)",
+          "oklch(71% 0.0143 128.63)",
+          "oklch(83% 0.0143 128.63)",
+          "oklch(95% 0.0143 128.63)"
+        ]
+      },
+      "declined-ink": {
+        "role": "secondary",
+        "displayName": "Texto no asiste",
+        "tonalRamp": [
+          "oklch(15% 0.0858 30.44)",
+          "oklch(25% 0.0858 30.44)",
+          "oklch(35% 0.0858 30.44)",
+          "oklch(47% 0.0858 30.44)",
+          "oklch(59% 0.0858 30.44)",
+          "oklch(71% 0.0858 30.44)",
+          "oklch(83% 0.0858 30.44)",
+          "oklch(95% 0.0858 30.44)"
+        ]
+      },
+      "declined-surface": {
+        "role": "secondary",
+        "displayName": "Fondo no asiste",
+        "tonalRamp": [
+          "oklch(15% 0.0128 48.59)",
+          "oklch(25% 0.0128 48.59)",
+          "oklch(35% 0.0128 48.59)",
+          "oklch(47% 0.0128 48.59)",
+          "oklch(59% 0.0128 48.59)",
+          "oklch(71% 0.0128 48.59)",
+          "oklch(83% 0.0128 48.59)",
+          "oklch(95% 0.0128 48.59)"
+        ]
+      },
+      "light-hover": {
+        "role": "neutral",
+        "displayName": "Hover claro",
+        "tonalRamp": [
+          "oklch(15% 0.0281 81.47)",
+          "oklch(25% 0.0281 81.47)",
+          "oklch(35% 0.0281 81.47)",
+          "oklch(47% 0.0281 81.47)",
+          "oklch(59% 0.0281 81.47)",
+          "oklch(71% 0.0281 81.47)",
+          "oklch(83% 0.0281 81.47)",
+          "oklch(95% 0.0281 81.47)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Portada",
+        "purpose": "Titular real de dos líneas, con ajustes responsive descritos en DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Sección",
+        "purpose": "Títulos editoriales principales."
+      },
+      "title": {
+        "displayName": "Etapa",
+        "purpose": "Título de la etapa del formulario."
+      },
+      "body": {
+        "displayName": "Lectura",
+        "purpose": "Base de texto y controles."
+      },
+      "body-small": {
+        "displayName": "Lectura compacta",
+        "purpose": "Ayudas, información práctica y datos."
+      },
+      "label": {
+        "displayName": "Etiqueta",
+        "purpose": "Etiqueta visible de campo."
+      },
+      "field": {
+        "displayName": "Entrada",
+        "purpose": "Valor editable del campo."
+      },
+      "action": {
+        "displayName": "Acción",
+        "purpose": "Botones compartidos con mayúsculas por CSS."
+      },
+      "navigation": {
+        "displayName": "Navegación",
+        "purpose": "Enlaces compactos de cabecera."
+      },
+      "monogram": {
+        "displayName": "Monograma",
+        "purpose": "Iniciales de boda en cabecera y pie."
+      },
+      "statistic": {
+        "displayName": "Métrica",
+        "purpose": "Cifras de gestión con font-variant-numeric: tabular-nums."
+      }
+    },
+    "shadows": [
+      {
+        "name": "photo-caption-text",
+        "value": "0 1px 6px #0009",
+        "purpose": "Sombra de texto del pie sobre fotografía; no es una sombra de caja."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background .2s, transform .2s, color .2s",
+        "purpose": "Estados de botones compartidos."
+      },
+      {
+        "name": "rule-and-disclosure",
+        "value": "transform .25s",
+        "purpose": "Regla de navegación y giro del SVG de acordeón."
+      },
+      {
+        "name": "paper-opening",
+        "value": ".7s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Hojas de apertura desplazadas a los lados."
+      },
+      {
+        "name": "opening-fade",
+        "value": ".25s",
+        "purpose": "Desvanecimiento del contenido de apertura."
+      },
+      {
+        "name": "menu-entry",
+        "value": ".25s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Entrada del diálogo lateral desde 35px y opacidad .4."
+      },
+      {
+        "name": "photo-hover",
+        "value": "transform .5s",
+        "purpose": "Ampliación a 1.02 en las fotografías del directorio."
+      },
+      {
+        "name": "loading",
+        "value": "1s ease-in-out infinite alternate",
+        "purpose": "Regla de carga que crece de 30px a 90px."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Anula animaciones, transiciones y desplazamiento suave."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "360px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "tablet",
+        "value": "1050px"
+      },
+      {
+        "name": "wide",
+        "value": "1550px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón Principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Variante del botón compartido implementado.",
+      "html": "<button type=\"button\" class=\"ds-button-primary\">Confirmar asistencia <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"square\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12h18m-7-7 7 7-7 7\"/></svg></button>",
+      "css": ".ds-button-primary{min-height:54px;padding:16px 25px;display:inline-flex;align-items:center;justify-content:center;gap:26px;font-family:var(--sans,'DM Sans',sans-serif);font-size:11px;font-weight:400;letter-spacing:.2em;line-height:1.5;text-transform:uppercase;border:1px solid transparent;border-radius:1px;transition:background .2s,transform .2s,color .2s;text-align:center;cursor:pointer;background:var(--accent-dark,#80602d);color:#fff}.ds-button-primary:hover{background:var(--ink,#282622)}.ds-button-primary:active{transform:translateY(1px)}.ds-button-primary:disabled{cursor:wait;opacity:.6}.ds-button-primary svg{width:23px;flex-shrink:0}.ds-button-primary:focus-visible{outline:2px solid var(--accent-dark,#80602d);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none}}"
+    },
+    {
+      "name": "Botón Contorno",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Variante del botón compartido implementado.",
+      "html": "<button type=\"button\" class=\"ds-button-outline\">Exportar CSV <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"square\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12h18m-7-7 7 7-7 7\"/></svg></button>",
+      "css": ".ds-button-outline{min-height:54px;padding:16px 25px;display:inline-flex;align-items:center;justify-content:center;gap:26px;font-family:var(--sans,'DM Sans',sans-serif);font-size:11px;font-weight:400;letter-spacing:.2em;line-height:1.5;text-transform:uppercase;border:1px solid transparent;border-radius:1px;transition:background .2s,transform .2s,color .2s;text-align:center;cursor:pointer;background:transparent;color:var(--accent-dark,#80602d);border-color:var(--accent,#ac8748)}.ds-button-outline:hover{background:var(--soft,#f5f1e9)}.ds-button-outline:active{transform:translateY(1px)}.ds-button-outline:disabled{cursor:wait;opacity:.6}.ds-button-outline svg{width:23px;flex-shrink:0}.ds-button-outline:focus-visible{outline:2px solid var(--accent-dark,#80602d);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button-outline{transition:none}}"
+    },
+    {
+      "name": "Botón Claro",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Acción sobre el cierre fotográfico.",
+      "html": "<button type=\"button\" class=\"ds-button-light\">Confirmar asistencia <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"square\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12h18m-7-7 7 7-7 7\"/></svg></button>",
+      "css": ".ds-button-light{min-height:54px;padding:16px 25px;display:inline-flex;align-items:center;justify-content:center;gap:26px;font-family:var(--sans,'DM Sans',sans-serif);font-size:11px;font-weight:400;letter-spacing:.2em;line-height:1.5;text-transform:uppercase;border:1px solid transparent;border-radius:1px;transition:background .2s,transform .2s,color .2s;text-align:center;cursor:pointer;background:var(--paper,#fffefa);color:var(--ink,#282622)}.ds-button-light:hover{background:#e9decb}.ds-button-light:active{transform:translateY(1px)}.ds-button-light:disabled{cursor:wait;opacity:.6}.ds-button-light svg{width:23px;flex-shrink:0}.ds-button-light:focus-visible{outline:2px solid var(--accent-dark,#80602d);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button-light{transition:none}}"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Etiqueta visible y control cuadrado, con ayuda asociada y estado de error.",
+      "html": "<label class=\"ds-field\">Tu nombre<input class=\"ds-input\" name=\"author\" autocomplete=\"name\" aria-describedby=\"ds-field-note\" placeholder=\"Nombre\" /></label><p class=\"ds-field-note\" id=\"ds-field-note\">Escribe el nombre que figura en tu invitación.</p>",
+      "css": ".ds-field{display:grid;gap:8px;font-family:var(--sans,'DM Sans',sans-serif);font-size:13px;font-weight:500;line-height:1.65;color:var(--ink,#282622)}.ds-input{border:1px solid #b8b1a5;border-radius:0;background:var(--paper,#fffefa);padding:13px 14px;color:var(--ink,#282622);min-height:48px;width:100%;font-family:var(--sans,'DM Sans',sans-serif);font-size:16px;font-weight:400;line-height:1.5;caret-color:var(--accent-dark,#80602d)}.ds-input::placeholder{color:#777065}.ds-input[aria-invalid='true']{border-color:var(--error,#9b3630)}.ds-field-note{font-family:var(--sans,'DM Sans',sans-serif);font-size:12px;line-height:1.65;color:var(--muted,#6c685f);font-weight:400}.ds-field-error{font-family:var(--sans,'DM Sans',sans-serif);font-size:12px;display:block;margin-top:7px;color:var(--error,#9b3630)}.ds-input:focus-visible{outline:2px solid var(--accent-dark,#80602d);outline-offset:5px}"
+    },
+    {
+      "name": "Navegación de escritorio",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Enlaces de cabecera con regla animada; la página cambia al diálogo de menú bajo 760 px.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><a href=\"#historia\">Nuestra historia</a><a href=\"#programa\">El gran día</a><a href=\"#guia\">Cómo venir</a></nav>",
+      "css": ".ds-nav{display:flex;gap:32px;font-family:var(--sans,'DM Sans',sans-serif);font-size:11px;font-weight:400;line-height:1.65;letter-spacing:.08em;color:var(--ink,#282622)}.ds-nav a{display:flex;align-items:center;min-height:44px;position:relative;color:inherit;text-decoration:none}.ds-nav a:after{content:'';position:absolute;bottom:8px;left:0;width:100%;height:1px;background:var(--accent,#ac8748);transform:scaleX(0);transform-origin:left;transition:transform .25s}.ds-nav a:hover:after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:2px solid var(--accent-dark,#80602d);outline-offset:5px}@media(max-width:1050px){.ds-nav{gap:20px}}@media(prefers-reduced-motion:reduce){.ds-nav a:after{transition:none}}"
+    },
+    {
+      "name": "Estados de asistencia",
+      "kind": "chip",
+      "refersTo": "status-pending",
+      "description": "Etiquetas informativas de pendiente, confirmado y no asiste; no son controles interactivos.",
+      "html": "<span class=\"ds-status\">Pendiente</span> <span class=\"ds-status ds-status-yes\">Confirmado</span> <span class=\"ds-status ds-status-no\">No asiste</span>",
+      "css": ".ds-status{display:inline-block;font-family:var(--sans,'DM Sans',sans-serif);font-size:10px;font-weight:400;line-height:1.65;padding:4px 9px;background:var(--soft,#f5f1e9);color:var(--muted,#6c685f)}.ds-status-yes{color:#36503c;background:#edf2e8}.ds-status-no{color:#82453b;background:#f7ede8}"
+    },
+    {
+      "name": "Carta de aniversario",
+      "kind": "card",
+      "refersTo": "anniversary-container",
+      "description": "Contenedor tonal existente en recuerdos: papel suave, serif y enlace abierto.",
+      "html": "<div class=\"ds-anniversary\"><h3>Una carta. Un año después.</h3><p>No hay cartas guardadas en esta página de demostración.</p><a class=\"ds-letter-link\" href=\"#participar\">Escribir una carta <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"square\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12h18m-7-7 7 7-7 7\"/></svg></a></div>",
+      "css": ".ds-anniversary{background:var(--soft,#f5f1e9);color:var(--ink,#282622);padding:35px;margin-top:40px}.ds-anniversary h3{font-family:var(--serif,'Bodoni Moda',Georgia,serif);font-size:31px;font-weight:400;line-height:1.1;margin:0 0 15px}.ds-anniversary p{font-family:var(--sans,'DM Sans',sans-serif);font-size:13px;line-height:1.65;color:var(--muted,#6c685f);margin:0;max-width:68ch}.ds-letter-link{display:inline-flex;align-items:center;gap:22px;min-height:44px;font-family:var(--sans,'DM Sans',sans-serif);font-size:11px;line-height:1.65;letter-spacing:.13em;text-transform:uppercase;color:inherit;text-decoration:none}.ds-letter-link:hover{color:var(--accent-dark,#80602d)}.ds-letter-link svg{flex-shrink:0}.ds-letter-link:focus-visible{outline:2px solid var(--accent-dark,#80602d);outline-offset:5px}@media(max-width:760px){.ds-anniversary{padding:25px}}"
+    },
+    {
+      "name": "Acordeón de información",
+      "kind": "custom",
+      "refersTo": "accordion",
+      "description": "Detalle nativo con regla inferior y SVG que gira al abrir.",
+      "html": "<details class=\"ds-detail\"><summary>Dónde alojarse <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"square\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 4v16M4 12h16\"/></svg></summary><div class=\"ds-detail-content\"><p>Consulta las opciones de alojamiento y los detalles de llegada.</p></div></details>",
+      "css": ".ds-detail{border-bottom:1px solid var(--line,#d6c8b1);font-family:var(--sans,'DM Sans',sans-serif);font-weight:400;line-height:1.65;color:var(--ink,#282622)}.ds-detail summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;min-height:60px;font-size:14px}.ds-detail summary::-webkit-details-marker{display:none}.ds-detail summary svg{width:18px;height:18px;flex-shrink:0;color:var(--accent-dark,#80602d);transition:transform .25s}.ds-detail[open]>summary svg{transform:rotate(45deg)}.ds-detail-content{padding:0 0 24px;font-size:13px;color:var(--muted,#6c685f)}.ds-detail-content p{margin:0;max-width:68ch}.ds-detail summary:focus-visible{outline:2px solid var(--accent-dark,#80602d);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-detail summary svg{transition:none}}"
+    },
+    {
+      "name": "Fila de programa",
+      "kind": "custom",
+      "refersTo": "program-row",
+      "description": "Numeración editorial, hora, título y lugar separados mediante reglas.",
+      "html": "<ol class=\"ds-program\"><li class=\"ds-program-row\"><span class=\"ds-program-number\" aria-hidden=\"true\">01</span><div class=\"ds-program-copy\"><time datetime=\"2027-06-26T17:00:00+02:00\">17:00</time><h3>La ceremonia</h3><p>El principio de todo lo que viene.</p><span class=\"ds-program-venue\">Lugar de demostración</span></div></li><li class=\"ds-program-row\"><span class=\"ds-program-number\" aria-hidden=\"true\">02</span><div class=\"ds-program-copy\"><time datetime=\"2027-06-26T18:00:00+02:00\">18:00</time><h3>Un brindis</h3><p>Tiempo para compartir.</p><span class=\"ds-program-venue\">Lugar de demostración</span></div></li></ol>",
+      "css": ".ds-program{list-style:none;padding:0;margin:0;font-family:var(--sans,'DM Sans',sans-serif);font-weight:400;line-height:1.65;color:var(--ink,#282622)}.ds-program-row{display:grid;grid-template-columns:80px 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--accent,#ac8748)}.ds-program-row:first-child{padding-top:5px}.ds-program-row:last-child{border-bottom:0}.ds-program-number{font-family:var(--serif,'Bodoni Moda',Georgia,serif);color:var(--accent,#ac8748);font-size:68px;line-height:1}.ds-program-copy{border-left:1px solid var(--accent,#ac8748);padding-left:28px}.ds-program-copy time{display:block;font-family:var(--serif,'Bodoni Moda',Georgia,serif);font-size:23px;letter-spacing:.12em;color:var(--accent-dark,#80602d);line-height:1.2}.ds-program-copy h3{font-family:var(--serif,'Bodoni Moda',Georgia,serif);font-weight:400;line-height:1.1;text-transform:uppercase;font-size:clamp(23px,2.6vw,38px);margin:5px 0 12px;letter-spacing:-.03em}.ds-program-copy p{font-size:13px;line-height:1.8;color:var(--muted,#6c685f);margin:0}.ds-program-venue{font-size:10px;color:var(--accent-dark,#80602d);display:block;margin-top:12px;letter-spacing:.04em}@media(max-width:1050px){.ds-program-row{grid-template-columns:60px 1fr;gap:18px}.ds-program-number{font-size:57px}.ds-program-copy{padding-left:20px}}@media(max-width:760px){.ds-program-row{grid-template-columns:64px 1fr;gap:20px;padding:22px 0}.ds-program-number{font-size:63px}.ds-program-copy{padding-left:22px}.ds-program-copy time{font-size:21px}.ds-program-copy h3{font-size:28px}.ds-program-copy p{font-size:12px}.ds-program-venue{font-size:9px;margin-top:9px}}@media(max-width:360px){.ds-program-row{grid-template-columns:50px 1fr;gap:16px}.ds-program-number{font-size:53px}.ds-program-copy{padding-left:16px}.ds-program-copy h3{font-size:23px}}"
+    },
+    {
+      "name": "Progreso de confirmación",
+      "kind": "custom",
+      "refersTo": "stepper",
+      "description": "Tres etapas con estado actual indicado por regla, color y aria-current.",
+      "html": "<ol class=\"ds-stepper\" aria-label=\"Progreso de confirmación\"><li class=\"ds-step-active\" aria-current=\"step\"><span>01</span>Asistencia</li><li><span>02</span>Tus detalles</li><li><span>03</span>Revisión</li></ol>",
+      "css": ".ds-stepper{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);padding:0;margin:0 0 36px;gap:8px;font-family:var(--sans,'DM Sans',sans-serif);font-weight:400;line-height:1.65}.ds-stepper li{border-top:1px solid var(--line,#d6c8b1);padding-top:12px;font-size:11px;color:var(--muted,#6c685f)}.ds-stepper li.ds-step-active{border-top:2px solid var(--accent-dark,#80602d);padding-top:11px;color:var(--accent-dark,#80602d)}.ds-stepper span{display:block;font-family:var(--serif,'Bodoni Moda',Georgia,serif);font-size:26px;margin-bottom:5px}@media(max-width:760px){.ds-stepper{margin-bottom:30px}.ds-stepper li{font-size:10px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Una editorial íntima",
+    "overview": "La identidad implementada traduce las referencias aportadas a una editorial íntima: papel casi blanco, tinta cálida, oro mate, serif de gran contraste y fotografía cercana. La escala tipográfica y el espacio abierto dan presencia a la celebración; las reglas finas ordenan sus detalles.\n\nBodoni Moda mantiene la voz de la invitación, la confirmación y la gestión. DM Sans sostiene navegación, formularios y datos. La segunda boda conserva la misma estructura y sustituye el oro por oliva. Este documento registra el código terminado y sus capturas; no procede de una composición generada aprobada.",
+    "keyCharacteristics": [
+      "Serif monumental con cursivas breves y monogramas compactos.",
+      "Fondos claros, acentos mates y líneas de un píxel.",
+      "Fotografía íntima a sangre y recortes rectangulares.",
+      "Formularios cuadrados, progreso visible y filas operativas regladas."
+    ],
+    "rules": [
+      {
+        "name": "The Accent Roles Rule",
+        "body": "El acento claro dibuja ampersands, números de programa y reglas; el acento oscuro sostiene acciones y texto funcional. La variante oliva conserva estos papeles.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Bodoni Moda expresa nombres, títulos y cifras destacadas. DM Sans resuelve controles, instrucciones y datos de lectura continua.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Plane Rule",
+        "body": "Los contenedores permanecen planos. Las reglas y los fondos tonales establecen jerarquía; las fotografías aportan profundidad.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do mantener la serif local, el contraste de escala y las reglas finas en las nuevas pantallas.",
+      "Do aplicar conjuntamente los acentos claro y oscuro de cada boda, conservando el fondo correspondiente.",
+      "Do conservar etiquetas visibles, errores asociados y foco perceptible en formularios y navegación.",
+      "Do usar SVG de trazo fino para los iconos y fotografías con texto alternativo.",
+      "Do respetar el movimiento reducido y mantener accesible el contenido cuando la apertura termina o se omite."
+    ],
+    "donts": [
+      "Don't introducir flores decorativas, corazones repetidos o bloques redondeados genéricos.",
+      "Don't convertir el rótulo de programa fijado por la referencia en una plantilla de antetítulos para todas las secciones.",
+      "Don't usar el oro claro como sustituto del acento oscuro en el texto funcional.",
+      "Don't añadir sombras a las tarjetas ni degradados decorativos que cambien el carácter de papel plano.",
+      "Don't sustituir los iconos SVG por flechas o símbolos tipográficos."
+    ]
+  }
+}
+

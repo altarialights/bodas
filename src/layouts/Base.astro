@@ -1,0 +1,27 @@
+---
+import '@fontsource/bodoni-moda/latin-400.css';
+import '@fontsource/bodoni-moda/latin-400-italic.css';
+import '@fontsource/dm-sans/latin-400.css';
+import '@fontsource/dm-sans/latin-500.css';
+import '../styles/global.css';
+import type { Wedding } from '../domain/types';
+interface Props { title: string; wedding?: Wedding; description?: string }
+const { title, wedding, description = 'Una invitación para compartir lo que de verdad importa. Demostración de Altaria.' } = Astro.props;
+---
+<!doctype html>
+<html lang={wedding?.locale.split('-')[0] ?? 'es'} style={wedding ? `--accent:${wedding.visual.accent};--accent-dark:${wedding.visual.accentDark};--paper:${wedding.visual.paper}` : undefined}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content={wedding?.visual.paper ?? '#fffefa'} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body data-wedding={wedding?.slug}>
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+    <slot />
+    <noscript><p class="noscript-note">Puedes consultar toda la invitación. Para confirmar, escuchar música y probar la demo, activa JavaScript.</p></noscript>
+  </body>
+</html>

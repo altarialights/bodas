@@ -1,0 +1,7 @@
+---
+import Invitation from '../components/Invitation.astro';
+import { repository } from '../data/repository';
+const weddings = await repository.listWeddings();
+const bundle = await repository.getWedding(weddings[0]!.slug);
+---
+<Invitation bundle={bundle!} />

@@ -1,0 +1,35 @@
+---
+import type { Wedding } from '../domain/types';
+import Icon from './Icon.astro';
+interface Props { wedding?: Wedding }
+const { wedding } = Astro.props;
+const home = wedding ? `/boda/${wedding.slug}` : '/demo';
+const links = wedding ? [
+  ...(wedding.sections.story ? [{ label: 'Nuestra historia', href: `${home}#historia` }] : []),
+  ...(wedding.sections.program ? [{ label: 'El gran día', href: `${home}#programa` }] : []),
+  ...(wedding.sections.guide ? [{ label: 'Cómo venir', href: `${home}#guia` }] : []),
+  { label: 'Recuerdos', href: `${home}/recuerdos` },
+] : [{ label: 'Las invitaciones', href: '/demo' }, { label: 'Organización', href: '/gestion' }];
+---
+<header class="site-header wrap">
+  <a class:list={['monogram', { 'brand-word': !wedding }]} href={home} aria-label={wedding ? `Inicio · ${wedding.names.join(' y ')}` : 'Altaria · inicio'}>{wedding?.visual.monogram ?? 'ALTARIA'}</a>
+  <nav class="desktop-nav" aria-label="Principal">{links.map(link => <a href={link.href}>{link.label}</a>)}</nav>
+  <div class="header-actions"><slot name="tools" />{wedding && <a class="header-rsvp" href={`${home}/confirmar`}>Confirmar <Icon size={17} /></a>}<button class="icon-button menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation-dialog"><Icon name="menu" size={29} /></button></div>
+</header>
+<dialog id="navigation-dialog" class="nav-dialog">
+  <div class="nav-inner"><div class="nav-top"><span class="monogram">{wedding?.visual.monogram ?? 'A'}</span><button class="icon-button nav-close" aria-label="Cerrar menú"><Icon name="close" size={28} /></button></div>
+    <nav aria-label="Menú desplegado">{links.map(link => <a href={link.href}>{link.label}<Icon name="diagonal" /></a>)}{wedding && <a href={`${home}/confirmar`}>Confirmar asistencia<Icon /></a>}</nav>
+    <div class="nav-bottom"><span>Un día. Todos los recuerdos.</span><a href="/demo">Explorar la demostración</a></div>
+  </div>
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#navigation-dialog');
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  if (dialog && toggle) {
+    toggle.addEventListener('click', () => { dialog.showModal(); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; });
+    dialog.querySelector('.nav-close')?.addEventListener('click', () => dialog.close());
+    dialog.querySelectorAll('a').forEach(a => a.addEventListener('click', () => dialog.close()));
+    dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => { toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; toggle.focus({ preventScroll: true }); });
+  }
+</script>
